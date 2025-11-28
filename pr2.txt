@@ -1,0 +1,142 @@
+SQL> create table countries1(cid number(10),cname varchar2(20),ccode varchar2(25),primary key(cid));
+
+Table created.
+
+SQL> insert into countries1 values(&cid,'&cname','&ccode);
+Enter value for cid: 1
+Enter value for cname: india
+Enter value for ccode: 20
+old   1: insert into countries1 values(&cid,'&cname','&ccode)
+new   1: insert into countries1 values(1,'india','20)
+ERROR:
+ORA-01756: quoted string not properly terminated
+
+
+SQL> insert into countries1 values(&cid,'&cname','&ccode');
+Enter value for cid: 1
+Enter value for cname: india
+Enter value for ccode: 20
+old   1: insert into countries1 values(&cid,'&cname','&ccode')
+new   1: insert into countries1 values(1,'india','20')
+
+1 row created.
+
+SQL> /
+Enter value for cid: 2
+Enter value for cname: england
+Enter value for ccode: 23
+old   1: insert into countries1 values(&cid,'&cname','&ccode')
+new   1: insert into countries1 values(2,'england','23')
+
+1 row created.
+
+SQL> SQL> select * from countries1;
+SP2-0734: unknown command beginning "SQL> selec..." - rest of line ignored.
+SQL> select * from countries1;
+
+       CID CNAME                CCODE
+---------- -------------------- -------------------------
+         1 india                20
+         2 england              23
+
+SQL> create table states1(sid number(5),sname varchar2(25),scode varchar2(25),primary key(sid));
+
+Table created.
+
+SQL> insert into states1 values(&sid,'&sname','&scode');
+Enter value for sid: 544
+Enter value for sname: tamil nadu
+Enter value for scode: 98494
+old   1: insert into states1 values(&sid,'&sname','&scode')
+new   1: insert into states1 values(544,'tamil nadu','98494')
+
+1 row created.
+
+SQL> /
+Enter value for sid: 565
+Enter value for sname: london
+Enter value for scode: 8585
+old   1: insert into states1 values(&sid,'&sname','&scode')
+new   1: insert into states1 values(565,'london','8585')
+
+1 row created.
+
+SQL> select * from states1;
+
+       SID SNAME                     SCODE
+---------- ------------------------- -------------------------
+       544 tamil nadu                98494
+       565 london                    8585
+
+SQL> alter table states1 add cid number(5);
+
+Table altered.
+
+SQL> select * from states1;
+
+       SID SNAME                     SCODE                            CID
+---------- ------------------------- ------------------------- ----------
+       544 tamil nadu                98494
+       565 london                    8585
+
+SQL> update states1 set cid=1 where sid=2;
+
+0 rows updated.
+
+SQL> update states1 set cid=1 where sid=544;  
+
+1 row updated.
+
+SQL> update states1 set cid=1 where sid=2;
+
+0 rows updated.
+
+SQL> update states1 set cid=1 where sid=3;
+
+0 rows updated.
+
+SQL> update states1 set cid=1 where sid=565;  
+
+1 row updated.
+
+SQL> select * from states1;
+
+       SID SNAME                     SCODE                            CID
+---------- ------------------------- ------------------------- ----------
+       544 tamil nadu                98494                              1
+       565 london                    8585                               1
+
+SQL> select * from countries1;
+
+       CID CNAME                CCODE
+---------- -------------------- -------------------------
+         1 india                20
+         2 england              23
+
+SQL> SQL> alter table states1 add constraint fk_states_countries_id foreign key(cid) reference countries1(cid) on delete cascade;
+SP2-0734: unknown command beginning "SQL> alter..." - rest of line ignored.
+SQL> alter table states1 add constraint fk_states_countries_id foreign key(cid) reference countries1(cid) on delete cascade;
+alter table states1 add constraint fk_states_countries_id foreign key(cid) reference countries1(cid) on delete cascade
+                                                                           *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+SQL> alter table states1 add constraint fk_states_countries_id foreign key(cid) reference countries1(cid) on delete cascade;
+alter table states1 add constraint fk_states_countries_id foreign key(cid) reference countries1(cid) on delete cascade
+                                                                           *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+SQL> alter table states1 add constraint fk_states1_countries1_id foreign key(cid) references countries1(cid) on delete cascade;
+
+Table altered.
+
+SQL> delete from countries1 where cid=1;
+
+1 row deleted.
+
+SQL> select * from states1;
+
+no rows selected
