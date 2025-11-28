@@ -1,0 +1,687 @@
+
+
+SQL> create table customer(cid number(5),cname varchar2(20),caddress varchar2(20));
+
+Table created.
+
+SQL> insert into customer values(&cid,'&cname','&caddress');
+Enter value for cid: 20
+Enter value for cname: sulai^Z^Z     
+Enter value for caddress: trichy
+old   1: insert into customer values(&cid,'&cname','&caddress')
+new   1: insert into customer values(20,'','trichy')
+
+1 row created.
+
+SQL> /
+Enter value for cid: 2022
+Enter value for cname: sulaiman
+Enter value for caddress: chennai
+old   1: insert into customer values(&cid,'&cname','&caddress')
+new   1: insert into customer values(2022,'sulaiman','chennai')
+
+1 row created.
+
+SQL> /
+Enter value for cid: 9940
+Enter value for cname: master
+Enter value for caddress: kovai
+old   1: insert into customer values(&cid,'&cname','&caddress')
+new   1: insert into customer values(9940,'master','kovai')
+
+1 row created.
+
+SQL> select * from customer;
+
+       CID CNAME		CADDRESS
+---------- -------------------- --------------------
+	20			trichy
+      2022 sulaiman		chennai
+      9940 master		kovai
+
+SQL> desc customer;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CID						    NUMBER(5)
+ CNAME						    VARCHAR2(20)
+ CADDRESS					    VARCHAR2(20)
+
+
+2.
+
+SQL> create table accont(Anum number(15),bname varchar2(20),balance number(20));
+
+Table created.
+
+SQL> insert into accont values(&Anum,'&bname',&balance); 
+Enter value for anum: 1986
+Enter value for bname: iob
+Enter value for balance: 2000000000
+old   1: insert into accont values(&Anum,'&bname',&balance)
+new   1: insert into accont values(1986,'iob',2000000000)
+
+1 row created.
+
+SQL> /
+Enter value for anum: 98364
+Enter value for bname: canaraREG NO :25pcs019
+
+
+SQL> create table customer(cid number(5),cname varchar2(20),caddress varchar2(20));
+
+Table created.
+
+SQL> insert into customer values(&cid,'&cname','&caddress');
+Enter value for cid: 20
+Enter value for cname: sulai^Z^Z     
+Enter value for caddress: trichy
+old   1: insert into customer values(&cid,'&cname','&caddress')
+new   1: insert into customer values(20,'','trichy')
+
+1 row created.
+
+SQL> /
+Enter value for cid: 2022
+Enter value for cname: sulaiman
+Enter value for caddress: chennai
+old   1: insert into customer values(&cid,'&cname','&caddress')
+new   1: insert into customer values(2022,'sulaiman','chennai')
+
+1 row created.
+
+SQL> /
+Enter value for cid: 9940
+Enter value for cname: master
+Enter value for caddress: kovai
+old   1: insert into customer values(&cid,'&cname','&caddress')
+new   1: insert into customer values(9940,'master','kovai')
+
+1 row created.
+
+SQL> select * from customer;
+
+       CID CNAME		CADDRESS
+---------- -------------------- --------------------
+	20			trichy
+      2022 sulaiman		chennai
+      9940 master		kovai
+
+SQL> desc customer;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CID						    NUMBER(5)
+ CNAME						    VARCHAR2(20)
+ CADDRESS					    VARCHAR2(20)
+
+
+2.
+
+SQL> create table accont(Anum number(15),bname varchar2(20),balance number(20));
+
+Table created.
+
+SQL> insert into accont values(&Anum,'&bname',&balance); 
+Enter value for anum: 1986
+Enter value for bname: iob
+Enter value for balance: 2000000000
+old   1: insert into accont values(&Anum,'&bname',&balance)
+new   1: insert into accont values(1986,'iob',2000000000)
+
+1 row created.
+
+SQL> /
+Enter value for anum: 98364
+Enter value for bname: canara
+Enter value for balance: 3061341685
+old   1: insert into accont values(&Anum,'&bname',&balance)
+new   1: insert into accont values(98364,'canara',3061341685)
+
+1 row created.
+
+SQL> /  
+Enter value for anum: 2347890      
+Enter value for bname: bob
+Enter value for balance: 67983465
+old   1: insert into accont values(&Anum,'&bname',&balance)
+new   1: insert into accont values(2347890,'bob',67983465)
+
+1 row created.
+
+SQL> desc accont;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ANUM						    NUMBER(15)
+ BNAME						    VARCHAR2(20)
+ BALANCE					    NUMBER(20)
+
+SQL> select*from accont;
+
+      ANUM BNAME		   BALANCE
+---------- -------------------- ----------
+      1986 iob			2000000000
+     98364 canara		3061341685
+   2347890 bob			  67983465
+
+SQL> create table loan(Ino number(10),bname varchar2(20),amount number(20),primary key(Ino));
+
+Table created.
+
+SQL> insert into loan values(&INo,'&bname',&amount);
+Enter value for ino: 41789
+Enter value for bname: IOB
+Enter value for amount: 81397413
+old   1: insert into loan values(&INo,'&bname',&amount)
+new   1: insert into loan values(41789,'IOB',81397413)
+
+1 row created.
+
+SQL> /
+Enter value for ino: 7438
+Enter value for bname: jhgf
+Enter value for amount: 847932
+old   1: insert into loan values(&INo,'&bname',&amount)
+new   1: insert into loan values(7438,'jhgf',847932)
+
+1 row created.
+
+SQL> /
+Enter value for ino: 762314  
+Enter value for bname: fgsguj
+Enter value for amount: 36563
+old   1: insert into loan values(&INo,'&bname',&amount)
+new   1: insert into loan values(762314,'fgsguj',36563)
+
+1 row created.
+
+SQL> desc loan;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INO					   NOT NULL NUMBER(10)
+ BNAME						    VARCHAR2(20)
+ AMOUNT 					    NUMBER(20)
+
+SQL> select*from loan;
+
+       INO BNAME		    AMOUNT
+---------- -------------------- ----------
+     41789 IOB			  81397413
+      7438 jhgf 		    847932
+    762314 fgsguj		     36563
+
+SQL> create table branch(bname varchar2(20),bcity varchar2(20),assets number(20));
+
+Table created.
+
+SQL> insert into branch values('&bname','&bcity',&assets);
+Enter value for bname: iob
+Enter value for bcity: trichy
+Enter value for assets: 794174
+old   1: insert into branch values('&bname','&bcity',&assets)
+new   1: insert into branch values('iob','trichy',794174)
+
+1 row created.
+
+SQL> /
+Enter value for bname: jhf
+Enter value for bcity: jhhhhhhhla
+Enter value for assets: 398714
+old   1: insert into branch values('&bname','&bcity',&assets)
+new   1: insert into branch values('jhf','jhhhhhhhla',398714)
+
+1 row created.
+
+SQL> /
+Enter value for bname: hjgad    
+Enter value for bcity: ghaf
+Enter value for assets: 6391
+old   1: insert into branch values('&bname','&bcity',&assets)
+new   1: insert into branch values('hjgad','ghaf',6391)
+
+1 row created.
+
+SQL> desc branch;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BNAME						    VARCHAR2(20)
+ BCITY						    VARCHAR2(20)
+ ASSETS 					    NUMBER(20)
+
+SQL> select*from brach
+  2  
+SQL> select*from branch;
+
+BNAME		     BCITY		      ASSETS
+-------------------- -------------------- ----------
+iob		     trichy		      794174
+jhf		     jhhhhhhhla 	      398714
+hjgad		     ghaf			6391
+
+SQL> create table depositor(cname varchar2(20),anum number(10));
+
+Table created.
+
+SQL> insert into depositor values('&cname',&anum);
+Enter value for cname: sulai
+Enter value for anum: 816324
+old   1: insert into depositor values('&cname',&anum)
+new   1: insert into depositor values('sulai',816324)
+
+1 row created.
+
+SQL> /
+Enter value for cname: \jhds
+Enter value for anum: 9824
+old   1: insert into depositor values('&cname',&anum)
+new   1: insert into depositor values('\jhds',9824)
+
+1 row created.
+
+SQL> /
+Enter value for cname: hgsdljfs
+Enter value for anum: 76472
+old   1: insert into depositor values('&cname',&anum)
+new   1: insert into depositor values('hgsdljfs',76472)
+
+1 row created.
+
+SQL> desc depositor;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CNAME						    VARCHAR2(20)
+ ANUM						    NUMBER(10)
+
+SQL> select*from depositor;
+
+CNAME			   ANUM
+-------------------- ----------
+sulai			 816324
+\jhds			   9824
+hgsdljfs		  76472
+
+SQL> create table borrower(cname varchar2(20),Ino number(10));
+
+Table created.
+
+SQL> insert into borrower values('&cname',&Ino);
+Enter value for cname: sulai
+Enter value for ino: 981723
+old   1: insert into borrower values('&cname',&Ino)
+new   1: insert into borrower values('sulai',981723)
+
+1 row created.
+
+SQL> /
+Enter value for cname: asif
+Enter value for ino: 71344
+old   1: insert into borrower values('&cname',&Ino)
+new   1: insert into borrower values('asif',71344)
+
+1 row created.
+
+SQL> /
+Enter value for cname: parasath
+Enter value for ino: 871239   
+old   1: insert into borrower values('&cname',&Ino)
+new   1: insert into borrower values('parasath',871239)
+
+1 row created.
+
+SQL> desc borrower;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CNAME						    VARCHAR2(20)
+ INO						    NUMBER(10)
+
+SQL> select*from borrower;
+
+CNAME			    INO
+-------------------- ----------
+sulai			 981723
+asif			  71344
+parasath		 871239
+
+SQL> commit;
+
+Commit complete.
+
+SQL> create table supplier(sno number(10),pno number(10),color varchar2(10),quantity number(10),primary key(sno,pno));
+
+Table created.
+
+SQL> insert into supplier values(&sno,&pno,'&color',&quantity);
+Enter value for sno: 1
+Enter value for pno: 873443872 
+Enter value for color: blue
+Enter value for quantity: 7
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(1,873443872,'blue',7)
+
+1 row created.
+
+SQL> /
+Enter value for sno: 2
+Enter value for pno: 648257654
+Enter value for color: red
+Enter value for quantity: 8
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(2,648257654,'red',8)
+
+1 row created.
+
+SQL> /
+Enter value for sno: 3     
+Enter value for pno: 8972347270849
+Enter value for color: green
+Enter value for quantity: 4
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(3,8972347270849,'green',4)
+insert into supplier values(3,8972347270849,'green',4)
+                              *
+ERROR at line 1:
+ORA-01438: value larger than specified precision allowed for this column
+
+
+SQL> desc /
+SP2-0565: Illegal identifier.
+SQL> /
+Enter value for sno: 3
+Enter value for pno: 3672374
+Enter value for color: green
+Enter value for quantity: 5
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(3,3672374,'green',5)
+
+1 row created.
+
+SQL> desc supplier;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO					   NOT NULL NUMBER(10)
+ PNO					   NOT NULL NUMBER(10)
+ COLOR						    VARCHAR2(10)
+ QUANTITY					    NUMBER(10)
+
+SQL> select*from supplier;
+
+       SNO	  PNO COLOR	   QUANTITY
+---------- ---------- ---------- ----------
+	 1  873443872 blue		  7
+	 2  648257654 red		  8
+	 3    3672374 green		  5
+
+Enter value for balance: 3061341685
+old   1: insert into accont values(&Anum,'&bname',&balance)
+new   1: insert into accont values(98364,'canara',3061341685)
+
+1 row created.
+
+SQL> /  
+Enter value for anum: 2347890      
+Enter value for bname: bob
+Enter value for balance: 67983465
+old   1: insert into accont values(&Anum,'&bname',&balance)
+new   1: insert into accont values(2347890,'bob',67983465)
+
+1 row created.
+
+SQL> desc accont;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ANUM						    NUMBER(15)
+ BNAME						    VARCHAR2(20)
+ BALANCE					    NUMBER(20)
+
+SQL> select*from accont;
+
+      ANUM BNAME		   BALANCE
+---------- -------------------- ----------
+      1986 iob			2000000000
+     98364 canara		3061341685
+   2347890 bob			  67983465
+
+SQL> create table loan(Ino number(10),bname varchar2(20),amount number(20),primary key(Ino));
+
+Table created.
+
+SQL> insert into loan values(&INo,'&bname',&amount);
+Enter value for ino: 41789
+Enter value for bname: IOB
+Enter value for amount: 81397413
+old   1: insert into loan values(&INo,'&bname',&amount)
+new   1: insert into loan values(41789,'IOB',81397413)
+
+1 row created.
+
+SQL> /
+Enter value for ino: 7438
+Enter value for bname: jhgf
+Enter value for amount: 847932
+old   1: insert into loan values(&INo,'&bname',&amount)
+new   1: insert into loan values(7438,'jhgf',847932)
+
+1 row created.
+
+SQL> /
+Enter value for ino: 762314  
+Enter value for bname: fgsguj
+Enter value for amount: 36563
+old   1: insert into loan values(&INo,'&bname',&amount)
+new   1: insert into loan values(762314,'fgsguj',36563)
+
+1 row created.
+
+SQL> desc loan;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ INO					   NOT NULL NUMBER(10)
+ BNAME						    VARCHAR2(20)
+ AMOUNT 					    NUMBER(20)
+
+SQL> select*from loan;
+
+       INO BNAME		    AMOUNT
+---------- -------------------- ----------
+     41789 IOB			  81397413
+      7438 jhgf 		    847932
+    762314 fgsguj		     36563
+
+SQL> create table branch(bname varchar2(20),bcity varchar2(20),assets number(20));
+
+Table created.
+
+SQL> insert into branch values('&bname','&bcity',&assets);
+Enter value for bname: iob
+Enter value for bcity: trichy
+Enter value for assets: 794174
+old   1: insert into branch values('&bname','&bcity',&assets)
+new   1: insert into branch values('iob','trichy',794174)
+
+1 row created.
+
+SQL> /
+Enter value for bname: jhf
+Enter value for bcity: jhhhhhhhla
+Enter value for assets: 398714
+old   1: insert into branch values('&bname','&bcity',&assets)
+new   1: insert into branch values('jhf','jhhhhhhhla',398714)
+
+1 row created.
+
+SQL> /
+Enter value for bname: hjgad    
+Enter value for bcity: ghaf
+Enter value for assets: 6391
+old   1: insert into branch values('&bname','&bcity',&assets)
+new   1: insert into branch values('hjgad','ghaf',6391)
+
+1 row created.
+
+SQL> desc branch;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BNAME						    VARCHAR2(20)
+ BCITY						    VARCHAR2(20)
+ ASSETS 					    NUMBER(20)
+
+SQL> select*from brach
+  2  
+SQL> select*from branch;
+
+BNAME		     BCITY		      ASSETS
+-------------------- -------------------- ----------
+iob		     trichy		      794174
+jhf		     jhhhhhhhla 	      398714
+hjgad		     ghaf			6391
+
+SQL> create table depositor(cname varchar2(20),anum number(10));
+
+Table created.
+
+SQL> insert into depositor values('&cname',&anum);
+Enter value for cname: sulai
+Enter value for anum: 816324
+old   1: insert into depositor values('&cname',&anum)
+new   1: insert into depositor values('sulai',816324)
+
+1 row created.
+
+SQL> /
+Enter value for cname: \jhds
+Enter value for anum: 9824
+old   1: insert into depositor values('&cname',&anum)
+new   1: insert into depositor values('\jhds',9824)
+
+1 row created.
+
+SQL> /
+Enter value for cname: hgsdljfs
+Enter value for anum: 76472
+old   1: insert into depositor values('&cname',&anum)
+new   1: insert into depositor values('hgsdljfs',76472)
+
+1 row created.
+
+SQL> desc depositor;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CNAME						    VARCHAR2(20)
+ ANUM						    NUMBER(10)
+
+SQL> select*from depositor;
+
+CNAME			   ANUM
+-------------------- ----------
+sulai			 816324
+\jhds			   9824
+hgsdljfs		  76472
+
+SQL> create table borrower(cname varchar2(20),Ino number(10));
+
+Table created.
+
+SQL> insert into borrower values('&cname',&Ino);
+Enter value for cname: sulai
+Enter value for ino: 981723
+old   1: insert into borrower values('&cname',&Ino)
+new   1: insert into borrower values('sulai',981723)
+
+1 row created.
+
+SQL> /
+Enter value for cname: asif
+Enter value for ino: 71344
+old   1: insert into borrower values('&cname',&Ino)
+new   1: insert into borrower values('asif',71344)
+
+1 row created.
+
+SQL> /
+Enter value for cname: parasath
+Enter value for ino: 871239   
+old   1: insert into borrower values('&cname',&Ino)
+new   1: insert into borrower values('parasath',871239)
+
+1 row created.
+
+SQL> desc borrower;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CNAME						    VARCHAR2(20)
+ INO						    NUMBER(10)
+
+SQL> select*from borrower;
+
+CNAME			    INO
+-------------------- ----------
+sulai			 981723
+asif			  71344
+parasath		 871239
+
+SQL> commit;
+
+Commit complete.
+
+SQL> create table supplier(sno number(10),pno number(10),color varchar2(10),quantity number(10),primary key(sno,pno));
+
+Table created.
+
+SQL> insert into supplier values(&sno,&pno,'&color',&quantity);
+Enter value for sno: 1
+Enter value for pno: 873443872 
+Enter value for color: blue
+Enter value for quantity: 7
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(1,873443872,'blue',7)
+
+1 row created.
+
+SQL> /
+Enter value for sno: 2
+Enter value for pno: 648257654
+Enter value for color: red
+Enter value for quantity: 8
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(2,648257654,'red',8)
+
+1 row created.
+
+SQL> /
+Enter value for sno: 3     
+Enter value for pno: 8972347270849
+Enter value for color: green
+Enter value for quantity: 4
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(3,8972347270849,'green',4)
+insert into supplier values(3,8972347270849,'green',4)
+                              *
+ERROR at line 1:
+ORA-01438: value larger than specified precision allowed for this column
+
+
+SQL> desc /
+SP2-0565: Illegal identifier.
+SQL> /
+Enter value for sno: 3
+Enter value for pno: 3672374
+Enter value for color: green
+Enter value for quantity: 5
+old   1: insert into supplier values(&sno,&pno,'&color',&quantity)
+new   1: insert into supplier values(3,3672374,'green',5)
+
+1 row created.
+
+SQL> desc supplier;
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO					   NOT NULL NUMBER(10)
+ PNO					   NOT NULL NUMBER(10)
+ COLOR						    VARCHAR2(10)
+ QUANTITY					    NUMBER(10)
+
+SQL> select*from supplier;
+
+       SNO	  PNO COLOR	   QUANTITY
+---------- ---------- ---------- ----------
+	 1  873443872 blue		  7
+	 2  648257654 red		  8
+	 3    3672374 green		  5
